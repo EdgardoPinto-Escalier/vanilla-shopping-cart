@@ -1,2 +1,3 @@
-# vanilla-shopping-cart
-Simple shopping cart
+## Vanilla Shopping Cart
+
+Simple shopping cart application using pure vanilla JavaScript and ES6
