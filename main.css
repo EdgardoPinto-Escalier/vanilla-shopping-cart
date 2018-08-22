@@ -1,1 +1,241 @@
+:root {
+  font-size: 12px;
+}
 
+@media screen and (min-width: 600px) {
+  :root {
+    padding: 12px;
+    font-size: 14px; 
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  :root {
+    padding: 20px;
+    font-size: 16px;
+  }
+}
+
+body {
+  font-size: 14px; 
+  margin: 0;
+  min-width: 360px;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Styles for the Layout */
+
+.itemsContainer {
+  max-width: 1200px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 3fr;
+  margin: 0 auto;
+  padding: 0 10px;;
+}
+
+@media screen and (min-width: 600px) {
+  .itemsContainer { grid-template-columns: 5fr 6fr }
+}
+
+@media screen and (min-width: 1000px) {
+  .itemsContainer { grid-template-columns: 5fr 3fr }
+}
+
+.itemsSection {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+}
+
+/* Styles for the Typography */
+
+h1, h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin: 1rem auto;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
+p {
+  margin: 1rem auto;
+}
+
+.has-centered-text {
+  text-align: center;
+}
+
+/* Styles for the Buttons */
+
+button {
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  font-size: .95rem;
+  border: none;
+}
+
+:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.btn {
+  padding: .65rem 1rem;
+  transition: .3s all;
+}
+
+.btn-small {
+  padding: .2rem .4rem;
+}
+
+.btn-primary {
+  color: #fff;
+  background: #3184d1;
+}
+
+.btn-primary:hover:not(:disabled),
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #a9d0f5;
+}
+
+.btn-danger {
+  color: #fff;;
+  background: #e90000;
+}
+
+.btn-danger:hover:not(:disabled),
+.btn-danger:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #f5b5b5;
+}
+
+/* Styles for the Items */
+
+.mainItemsDiv {
+  display: grid;
+  grid-gap: 10px;
+  overflow: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .mainItemsDiv {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .mainItemsDiv {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.item {
+  text-align: center;
+  padding: 10px;
+  border: 2px solid grey;
+}
+
+.item:hover {
+  border-style: solid;
+}
+
+.itemPrice:before {
+  content: '$';
+}
+
+.itemImage {
+  max-width: 65px;
+  transition: .3s all;
+  filter: drop-shadow(0px 0px 0px transparent);
+}
+
+@media screen and (min-width: 600px) {
+  .itemImage {
+    max-width: 100px;
+  }
+}
+
+
+/* Styles for the Shopping Cart  */
+
+.cart {
+  display: grid;
+  grid-gap: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.cart h3 {
+  margin: 0;
+}
+
+.cartNewItem {
+  display: grid;
+  grid-template-columns: 2rem 7rem 3rem auto 1rem auto auto;
+  justify-content: space-between;
+  align-items: center;  
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #d1d1d1;
+  animation: .3s add-cart-item;
+}
+
+@keyframes add-cart-item {
+  from {
+    margin-left: -200px;
+    margin-right: 200px;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    margin-right: 0;
+    opacity: 1;
+  }
+}
+
+.cartNewItem--removed {
+  animation: .3s remove-cart-item;
+}
+
+@keyframes remove-cart-item {
+  to {
+    margin-left: 200px;
+    margin-right: -200px;
+    opacity: 0;
+  }
+}
+
+.imageCartItem {
+  max-width: 28px;
+}
+
+@media screen and (min-width: 600px) {
+  .imageCartItem {
+    max-width: 38.5px;
+  }
+}
+
+.priceCartItem:before {
+  content: '$';
+}
+
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--base-padding);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, .7);
+  cursor: wait;
+}

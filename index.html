@@ -5,96 +5,95 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=360, initial-scale=1">
 	<title>Vanilla Shopping Cart</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
 </head>
 
+
 <body>
-	<main class="container">
-    <br>
-      <div class="columns">
-        <div class="column level">
-          <h2 class="is-size-2 has-text-centered">PRODUCTS</h2>
-        </div> 
-        <div class="column level">
-            <h2 class="is-size-2 has-text-centered">CART</h2>
-        </div>
-      </div>
 
-        <div class="columns">
+	<main class="itemsContainer">
 
-            <div class="column is-2">
-              <div class="box has-text-centered">
-                <img class="productImage" src="" alt="t-shirt">
-                <h2 class="productName">T-SHIRT</h2>
-                <h3 class="productPrice">25.00</h3>
-                <button class="button is-link" data-action="addToCart">ADD TO CART</button>
-              </div>
-            </div>
+    <section class="itemsSection">
 
-            <div class="column is-2">
-              <div class="box has-text-centered">
-                <img class="productImage" src="" alt="shoes">
-                <h2 class="productName">SHOES</h2>
-                <h3 class="productPrice">5.00</h3>
-                <button class="button is-link" data-action="addToCart">ADD TO CART</button>
-              </div>
-            </div>
+        <h2 class="has-centered-text">ITEMS</h2>
+        <div class="mainItemsDiv">
+			
 
-            <div class="column is-2">
-              <div class="box has-text-centered">
-                <img class="productImage" src="" alt="hat">
-                <h2 class="productName">HAT</h2>
-                <h3 class="productPrice">8.00</h3>
-                <button class="button is-link" data-action="addToCart">ADD TO CART</button>
-              </div>
-            </div>
-
-            <div class="column is-6"> 
-              <div class="row">
-                <div class="cart"></div>
-              </div>
-            </div>
+          <div class="item">
+              <img class="itemImage" src="img/red-hat.jpg" alt="Red Hat">           
+              <h2 class="itemName">RED HAT</h2>
+              <h3 class="itemPrice">25.00</h3>
+              <button class="btn btn-primary" data-action="addToCart">ADD TO CART</button>      
           </div>
 
-            
-
-          <div class="columns">
-
-            <div class="column is-2">
-              <div class="box has-text-centered">
-                <img class="productImage" src="" alt="polo shirt">
-                <h2 class="productName">POLO SHIRT</h2>
-                <h3 class="productPrice">30.00</h3>
-                <button class="button is-link" data-action="addToCart">ADD TO CART</button>
-              </div>
-            </div>
-
-            <div class="column is-2">
-              <div class="box has-text-centered">
-                <img class="productImage" src="" alt="Jeans">
-                <h2 class="productName">JEANS</h2>
-                <h3 class="productPrice">60.00</h3>
-                <button class="button is-link" data-action="addToCart">ADD TO CART</button>
-              </div>
-            </div>
-
-            <div class="column is-2">
-              <div class="box has-text-centered">
-                <img class="productImage" src="" alt="Jacket">
-                <h2 class="productName">JACKET</h2>
-                <h3 class="productPrice">90.00</h3>
-                <button class="button is-link" data-action="addToCart">ADD TO CART</button>
-              </div>
-            </div>
+          <div class="item">
+              <img class="itemImage" src="img/grey-underware.jpg" alt="underwear">
+              <h2 class="itemName">UNDERWEAR</h2>
+              <h3 class="itemPrice">85.00</h3>
+              <button class="btn btn-primary" data-action="addToCart">ADD TO CART</button> 
           </div>
 
-          
+          <div class="item">
+              <img class="itemImage" src="img/jeans.jpg" alt="jeans">
+              <h2 class="itemName">JEANS</h2>
+              <h3 class="itemPrice">15.00</h3>
+              <button class="btn btn-primary" data-action="addToCart">ADD TO CART</button>
+          </div>
+
+
+          <div class="item">
+              <img class="itemImage" src="img/blue-t-shirt.jpg" alt="Blue T-Shirt">
+              <h2 class="itemName">BLUE T-SHIRT</h2>
+              <h3 class="itemPrice">30.00</h3>
+              <button class="btn btn-primary" data-action="addToCart">ADD TO CART</button>
+          </div>
+
+          <div class="item">
+              <img class="itemImage" src="img/purple-pants.jpg" alt="Purple Pants">
+              <h2 class="itemName">PURPLE PANTS</h2>
+              <h3 class="itemPrice">60.00</h3>
+              <button class="btn btn-primary" data-action="addToCart">ADD TO CART</button>
+          </div>
+
+          <div class="item">
+              <img class="itemImage" src="img/yellow-polo-shirt.jpg" alt="Yellow Shirt">
+              <h2 class="itemName">YELLOW SHIRT</h2>
+              <h3 class="itemPrice">90.00</h3>
+              <button class="btn btn-primary" data-action="addToCart">ADD TO CART</button>
+          </div>
+
+          <div class="item">
+            <img class="itemImage" src="img/yellow-t-shirt.jpg" alt="Yellow T-Shirt">
+            <h2 class="itemName">YELLOW T-SHIRT</h2>
+            <h3 class="itemPrice">30.00</h3>
+            <button class="btn btn-primary" data-action="addToCart">ADD TO CART</button>
         </div>
 
-	</main>
+        <div class="item">
+            <img class="itemImage" src="img/yellow-underware.jpg" alt="Yellow Underwear">
+            <h2 class="itemName">YELLOW UNDERWEAR</h2>
+            <h3 class="itemPrice">30.00</h3>
+            <button class="btn btn-primary" data-action="addToCart">ADD TO CART</button>
+        </div>
 
+        <div class="item">
+            <img class="itemImage" src="img/green-shirt.jpg" alt="Green Shirt">
+            <h2 class="itemName">GREEN SHIRT</h2>
+            <h3 class="itemPrice">20.00</h3>
+            <button class="btn btn-primary" data-action="addToCart">ADD TO CART</button>
+        </div>
+
+      </div> <!-- MAIN ITEMS DIV -->
+    </section> <!-- ITEMS SECTION  DIV -->
+
+    <section class="itemsSection">
+        <h2 class="has-centered-text">CART</h2>
+        <div class="cart"></div>
+    </section>
+
+  </main> <!-- MAIN ITEMS CONTAINER DIV -->
 	<script src="main.js"></script>
 </body>
-
 </html>
