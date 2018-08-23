@@ -55,7 +55,8 @@ addToCartBtns.forEach(addToCartBtn => {
                 cartItemsIteration.querySelector('.cartItemQty').innerText = --cartItemSingle.quantity;
               } else {
                 cartItemsIteration.remove(); // Here we remove the item from the DOM.
-                cart = cart.filter(cartItemSingle => cartItemSingle !== items.name);
+                cart = cart.filter(cartItemSingle => cartItemSingle.name !== item.name);
+                addToCartBtn.innerText = 'ADD TO CART';
               }
             }
           });
