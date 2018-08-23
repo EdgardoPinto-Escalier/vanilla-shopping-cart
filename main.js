@@ -13,6 +13,7 @@ addToCartBtns.forEach(addToCartBtn => {
       image: item.querySelector('.itemImage').getAttribute('src'),
       name: item.querySelector('.itemName').innerText,
       price: item.querySelector('.itemPrice').innerText,
+      quantity: 1
     }
 
     // Here let's check first if the items is already in the cart.
@@ -26,10 +27,43 @@ addToCartBtns.forEach(addToCartBtn => {
         <img class="imageCartItem" src="${items.image}" alt="${items.name}">
         <h3 class="nameCartItem">${items.name}</h3>
         <h3 class="priceCartItem">${items.price}</h3>
+        <button class="btn ntn-primary btn-small" data-action="decreaseQty">&minus;</button>
+        <h3 class="cartItemQty">${items.quantity}</h3>
+        <button class="btn ntn-primary btn-small" data-action="increaseQty">&plus;</button>
+        <button class="btn btn-danger btn-small" data-action="removeItem">&times;</button>
       </div>
       `);
       cart.push(items);
       addToCartBtn.innerText ='SAVED TO CART';
+
+      const cartItems = cartElements.querySelectorAll('.cartNewItem');
+      cartItems.forEach(cartItemsIteration => {
+      if(cartItemsIteration.querySelector('.nameCartItem').innerText === items.name){
+        // Here we increase the items quantity.
+        cartItemsIteration.querySelector('[data-action="increaseQty"]').addEventListener('click', () => {
+          cart.forEach(cartItemSingle => {
+            if(cartItemSingle.name === items.name) {
+              cartItemsIteration.querySelector('.cartItemQty').innerText = ++cartItemSingle.quantity;
+            }
+          });
+        });
+        // Here we decrease the items quantity.
+        cartItemsIteration.querySelector('[data-action="decreaseQty"]').addEventListener('click', () => {
+          cart.forEach(cartItemSingle => {
+            if(cartItemSingle.name === items.name) {
+              if(cartItemSingle.quantity > 1){
+                cartItemsIteration.querySelector('.cartItemQty').innerText = --cartItemSingle.quantity;
+              } else {
+                cartItemsIteration.remove(); // Here we remove the item from the DOM.
+                cart = cart.filter(cartItemSingle => cartItemSingle !== items.name);
+              }
+            }
+          });
+        });
+
+
+      }
+      });
     }
   });
 });
